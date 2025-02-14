@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: #fff;
+        }
+        /* Новый фон с клубничками */
+        .background {
+            background-image: url('https://mollis-lineis.ru/wp-content/uploads/2022/07/paper-strawberries-5-maeby-wild.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #f467b2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #f467b2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            font-size: 1.2em;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border-radius: 5px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+        }
+
+        /* Видеофайлы (анимированные котики) */
+        video {
+            width: 250px;
+            margin-top: 30px;
+            border-radius: 10px;
+            animation: moveKitty 2s infinite alternate;
+        }
+
+        @keyframes moveKitty {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Главная страница -->
+    <div class="background"></div>
+    <div>
+        <h1>Сонешка,будешь моей валентинкой?</h1>
+        <!-- Анимация Hello Kitty (увеличена) -->
+        <video class="hello-kitty" autoplay loop muted>
+            <source src="https://i.gifer.com/7V0.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <!-- Кнопки "ДА" и "НЕТ" -->
+        <button class="button yes-button" onclick="goToValentines()">ДА</button>
+        <button class="button no-button" id="noButton" onmouseover="moveButton()" onclick="changeText()">НЕТ</button>
+    </div>
+
+    <script>
+        function goToValentines() {
+            // Перенаправление на новую страницу
+            window.location.href = 'second_page.html';
+        }
+
+        function moveButton() {
+            let noButton = document.getElementById('noButton');
+            let screenWidth = window.innerWidth;
+            let screenHeight = window.innerHeight;
+
+            // Случайное положение на экране
+            let randomX = Math.floor(Math.random() * (screenWidth - noButton.offsetWidth));
+            let randomY = Math.floor(Math.random() * (screenHeight - noButton.offsetHeight));
+
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+            noButton.style.position = 'absolute';
+        }
+
+        function changeText() {
+            let noButton = document.getElementById('noButton');
+            let changeTextDiv = document.createElement('div');
+            changeTextDiv.classList.add('change-text');
+            changeTextDiv.textContent = "Ты все равно моя ❤";
+            document.body.appendChild(changeTextDiv);
+        }
+    </script>
+
+</body>
+</html>

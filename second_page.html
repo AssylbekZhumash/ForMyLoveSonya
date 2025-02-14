@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Site - Second Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        /* Новый фон с клубничками */
+        .background {
+            background-image: url('https://mollis-lineis.ru/wp-content/uploads/2022/07/paper-strawberries-5-maeby-wild.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #ff32bb;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Видеофайл с котиком (увеличен) */
+        video {
+            width: 400px;
+            margin-top: 30px;
+            border-radius: 10px;
+            animation: moveKitty 2s infinite alternate;
+        }
+
+        @keyframes moveKitty {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-15px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Вторая страница -->
+    <div class="background"></div>
+    <div>
+        <h2>УРЯЯЯЯЯ.Спасибо,любимая 💖</h2>
+        <!-- Видеофайл с котиком (увеличен) -->
+        <video class="hello-kitty" autoplay loop muted>
+            <source src="https://i.gifer.com/6mz.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </div>
+
+</body>
+</html>
