@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Site</title>
+    <title>I love u my sweetest girl</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@
             text-align: center;
             background-color: #fff;
         }
-        /* Новый фон с клубничками */
+       
         .background {
             background-image: url('https://mollis-lineis.ru/wp-content/uploads/2022/07/paper-strawberries-5-maeby-wild.jpg');
             background-size: cover;
@@ -61,7 +61,7 @@
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
         }
 
-        /* Видеофайлы (анимированные котики) */
+    
         video {
             width: 250px;
             margin-top: 30px;
@@ -81,23 +81,22 @@
 </head>
 <body>
 
-    <!-- Главная страница -->
     <div class="background"></div>
     <div>
         <h1>Сонешка,будешь моей валентинкой?</h1>
-        <!-- Анимация Hello Kitty (увеличена) -->
+
         <video class="hello-kitty" autoplay loop muted>
             <source src="https://i.gifer.com/7V0.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
-        <!-- Кнопки "ДА" и "НЕТ" -->
+    
         <button class="button yes-button" onclick="goToValentines()">ДА</button>
         <button class="button no-button" id="noButton" onmouseover="moveButton()" onclick="changeText()">НЕТ</button>
     </div>
 
     <script>
         function goToValentines() {
-            // Перенаправление на новую страницу
+        
             window.location.href = 'second_page.html';
         }
 
@@ -106,7 +105,7 @@
             let screenWidth = window.innerWidth;
             let screenHeight = window.innerHeight;
 
-            // Случайное положение на экране
+        
             let randomX = Math.floor(Math.random() * (screenWidth - noButton.offsetWidth));
             let randomY = Math.floor(Math.random() * (screenHeight - noButton.offsetHeight));
 
